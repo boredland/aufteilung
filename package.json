@@ -1,0 +1,18 @@
+{
+  "name": "karmarkar-karp",
+  "version": "0.1.0",
+  "description": "Implement Karmarkar-Karp Least Differencing Method of number partitioning",
+  "author": "Dave Mussulman <mussulma@gmail.com>",
+  "main": "lib/index.js",
+  "dependencies": {
+    "heap": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*"
+  },
+  "scripts": {
+    "test": "mocha -C tests/test.js"
+  },
+  "license": "MIT"
+}
