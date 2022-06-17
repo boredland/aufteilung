@@ -11,46 +11,34 @@ type Result<T> = {
 
 // greedy heuristic
 export const greedy = <T>({ values, key }: InputType<T>) => {
-    const result: Result<T> = {
-        A: [],
-        ASum: 0,
-        B: [],
-        BSum: 0,
-        distance: 0
-    };
-    if (values.length == 0) return result;
-
-    const todo: { payload: number | T, node: number }[] = [];
-
-    values.forEach((i) => {
-        const node = !!key && typeof i !== "number" ? i[key] : i;
+    const todo = values.map((payload) => {
+        const node = !!key && typeof payload !== "number" ? payload[key] : payload;
 
         if (typeof node !== "number") throw new Error(`kk_greedy: key ${String(key)} must refer to a number, found ${typeof node}`);
 
-        todo.push({
-            node,
-            payload: i,
-        });
-    });
+        return { payload, node };
+    }).sort((a, b) => { return b.node - a.node; });
 
-    todo.sort((a, b) => { return b.node - a.node; });
-
-    todo.forEach((i) => {
-        if (result.ASum < result.BSum) {
-            result.A.push(i.payload as T);
-            result.ASum += i.node;
+    const result = todo.reduce((previous, current) => {
+        if (previous.ASum < previous.BSum) {
+            previous.A.push(current.payload as T);
+            previous.ASum += current.node;
         } else {
-            result.B.push(i.payload as T);
-            result.BSum += i.node;
+            previous.B.push(current.payload as T);
+            previous.BSum += current.node;
         }
-    });
-
-    result.distance = Math.abs(result.ASum - result.BSum);
+        previous.distance = Math.abs(previous.ASum - previous.BSum);
+        return previous;
+    }, {
+        A: Array<T>(0),
+        ASum: 0,
+        B: Array<T>(0),
+        BSum: 0,
+        distance: 0
+    })
 
     return result;
 }
-
-
 
 type HeapNode<T> = {
     node: number;
@@ -61,7 +49,6 @@ type HeapNode<T> = {
 
 // least differencing method heuristic
 export const LDM = <T>({ values, key }: InputType<T>) => {
-
     var result: Result<T> = {
         A: [],
         ASum: 0,
@@ -69,7 +56,7 @@ export const LDM = <T>({ values, key }: InputType<T>) => {
         BSum: 0,
         distance: 0
     };
-    if (values.length == 0) return result;
+
     // Heap setting to return maximums, based on heap value then node
     var heap = new Heap((a: HeapNode<T>, b: HeapNode<T>) => {
         if (a.value === b.value) {
@@ -78,7 +65,7 @@ export const LDM = <T>({ values, key }: InputType<T>) => {
         return b.value - a.value;
     });
 
-    values.forEach((i) => {
+    values.map((i) => {
         const starting_value = !!key && typeof i !== "number" ? i[key] : i;
 
         if (typeof starting_value !== "number") throw new Error(`kk_greedy: key ${String(key)} must refer to a number, found ${typeof starting_value}`);
@@ -90,8 +77,6 @@ export const LDM = <T>({ values, key }: InputType<T>) => {
             payload: i,
         });
     });
-
-    console.debug(heap);
 
     while (heap.size() > 1) {
         kk_iterate(heap);
