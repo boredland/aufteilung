@@ -2,6 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/aufteilung)](https://www.npmjs.com/package/aufteilung)
 [![npm](https://img.shields.io/npm/dw/aufteilung)](https://www.npmjs.com/package/aufteilung)
+![npm bundle size (version)](https://img.shields.io/bundlephobia/minzip/aufteilung/latest)
 [![GitHub](https://img.shields.io/github/license/boredland/aufteilung)](./LICENSE)
 [![test](https://github.com/boredland/aufteilung/actions/workflows/test.yml/badge.svg)](https://github.com/boredland/aufteilung/actions/workflows/test.yml)
 
