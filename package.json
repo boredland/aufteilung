@@ -1,6 +1,6 @@
 {
   "name": "aufteilung",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "repository": "https://github.com/boredland/aufteilung",
   "description": "Implements Karmarkar-Karp Least Differencing Method of number partitioning",
   "author": "Dave Mussulman <mussulma@gmail.com>",
