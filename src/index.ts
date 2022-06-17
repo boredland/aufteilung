@@ -1,5 +1,4 @@
 import Heap from "heap";
-import { isPrimitive, NonFunctionKeys, PickByValue, PickByValueExact, Primitive, RequiredKeys } from 'utility-types';
 
 type InputType<T> = T extends number ? { values: number[], key?: never } : { values: T[], key: keyof T };
 type Result<T> = {
