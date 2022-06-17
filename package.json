@@ -7,6 +7,12 @@
   "contributors": [
     "Jonas Strassel <info@jonas-strassel.de"
   ],
+  "keywords": [
+    "karmarkar-karp",
+    "least-differencing",
+    "ldm",
+    "partitioning"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
