@@ -1,4 +1,4 @@
-import Heap from "heap";
+import Heap from "heap-js";
 
 type InputType<T> = T extends number ? { values: number[], key?: never } : { values: T[], key: keyof T };
 type Result<T> = {
@@ -91,8 +91,6 @@ const kk_iterate = <T>(heap: Heap<HeapNode<T>>) => {
     a.value = a.value - b.value;
     a.children = a.children.concat(b);
     heap.push(a);
-
-    console.debug('kk_iterate, heap: ', heap);
 };
 
 const kk_traverse = <T>(node: HeapNode<T>, result: Result<T>, level = 0) => {
