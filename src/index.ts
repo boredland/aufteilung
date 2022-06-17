@@ -12,9 +12,7 @@ type Result<T> = {
 // greedy heuristic
 export const greedy = <T>({ values, key }: InputType<T>) => {
     const todo = values.map((payload) => {
-        const node = !!key && typeof payload !== "number" ? payload[key] : payload;
-
-        if (typeof node !== "number") throw new Error(`kk_greedy: key ${String(key)} must refer to a number, found ${typeof node}`);
+        const node: number = !!key && typeof payload !== "number" ? payload[key] as unknown as number : payload as number;
 
         return { payload, node };
     }).sort((a, b) => { return b.node - a.node; });
@@ -65,16 +63,14 @@ export const LDM = <T>({ values, key }: InputType<T>) => {
         return b.value - a.value;
     });
 
-    values.map((i) => {
-        const starting_value = !!key && typeof i !== "number" ? i[key] : i;
-
-        if (typeof starting_value !== "number") throw new Error(`kk_greedy: key ${String(key)} must refer to a number, found ${typeof starting_value}`);
+    values.map((payload) => {
+        const node = !!key && typeof payload !== "number" ? payload[key] as unknown as number : payload as number;
 
         heap.push({
-            value: starting_value,
-            node: starting_value,
+            value: node,
+            node,
             children: [],
-            payload: i,
+            payload,
         });
     });
 
@@ -82,20 +78,15 @@ export const LDM = <T>({ values, key }: InputType<T>) => {
         kk_iterate(heap);
     }
 
-    const peek = heap.peek();
-    if (!peek) throw new Error("kk_greedy: heap must have at least two elements");
+    const peek: HeapNode<T> = heap.peek()!;
     kk_traverse(peek, result, 0);
     result.distance = peek.value;
     return result;
 }
 
-////////////////////
-
 const kk_iterate = <T>(heap: Heap<HeapNode<T>>) => {
-    var a = heap.pop();
-    var b = heap.pop();
-
-    if (!a || !b) throw new Error("kk_iterate: heap must have at least two elements");
+    var a = heap.pop()!;
+    var b = heap.pop()!;
 
     a.value = a.value - b.value;
     a.children = a.children.concat(b);
