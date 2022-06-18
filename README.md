@@ -5,6 +5,7 @@
 ![npm bundle size (version)](https://img.shields.io/bundlephobia/minzip/aufteilung/latest)
 [![GitHub](https://img.shields.io/github/license/boredland/aufteilung)](./LICENSE)
 [![test](https://github.com/boredland/aufteilung/actions/workflows/test.yml/badge.svg)](https://github.com/boredland/aufteilung/actions/workflows/test.yml)
+[![Coverage Status](https://coveralls.io/repos/github/boredland/aufteilung/badge.svg)](https://coveralls.io/github/boredland/aufteilung)
 
 Implements the [Karmarkar-Karp differencing algorithm](https://en.wikipedia.org/wiki/Largest_differencing_method) in Typescript. It can be used to evenly partition a list into two lists, while keeping their difference minimal.
 
