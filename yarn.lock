@@ -290,23 +290,7 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@commitlint/cli@17.1.1":
-  version "17.1.1"
-  resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-17.1.1.tgz#994e91a873aea2bcb53dfa3225ffce2c9022fd3e"
-  integrity sha512-xyQJNJs1j18At5wSBF6bMo1on6ZrpcHUr4duacznPU0RnywCAABDBP1s63BmhkTMdNXLVgVM4J1H2sG0HSS3IA==
-  dependencies:
-    "@commitlint/format" "^17.0.0"
-    "@commitlint/lint" "^17.1.0"
-    "@commitlint/load" "^17.1.1"
-    "@commitlint/read" "^17.1.0"
-    "@commitlint/types" "^17.0.0"
-    execa "^5.0.0"
-    lodash "^4.17.19"
-    resolve-from "5.0.0"
-    resolve-global "1.0.0"
-    yargs "^17.0.0"
-
-"@commitlint/cli@^17.1.1":
+"@commitlint/cli@17.1.2", "@commitlint/cli@^17.1.2":
   version "17.1.2"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-17.1.2.tgz#38240f84936df5216f749f06f838dc50cc85a43d"
   integrity sha512-h/4Hlka3bvCLbnxf0Er2ri5A44VMlbMSkdTRp8Adv2tRiklSTRIoPGs7OEXDv3EoDs2AAzILiPookgM4Gi7LOw==
@@ -376,7 +360,7 @@
     "@commitlint/rules" "^17.0.0"
     "@commitlint/types" "^17.0.0"
 
-"@commitlint/load@^17.1.1", "@commitlint/load@^17.1.2":
+"@commitlint/load@^17.1.2":
   version "17.1.2"
   resolved "https://registry.yarnpkg.com/@commitlint/load/-/load-17.1.2.tgz#19c88be570d8666bbd32f9b3d81925a08328bc13"
   integrity sha512-sk2p/jFYAWLChIfOIp/MGSIn/WzZ0vkc3afw+l4X8hGEYkvDe4gQUUAVxjl/6xMRn0HgnSLMZ04xXh5pkTsmgg==
@@ -1651,12 +1635,12 @@ commander@^4.0.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
   integrity sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==
 
-commitlint@17.1.1:
-  version "17.1.1"
-  resolved "https://registry.yarnpkg.com/commitlint/-/commitlint-17.1.1.tgz#c906dbc7414b4b4305ccf040d7c075f67ce57916"
-  integrity sha512-zsqweIqYE48Kl+WXKWo5vx70XjcHzw3gCusNUJXieE/Wb3hh/4UmZ11K531btjYS+NBxo1ftuicf6X8rz5J6eQ==
+commitlint@17.1.2:
+  version "17.1.2"
+  resolved "https://registry.yarnpkg.com/commitlint/-/commitlint-17.1.2.tgz#a7ef0e7291fee128248b3a4bf2782886b8589099"
+  integrity sha512-ykPXC3TUfYlL8tqz/VOeaJpTPNrcdKrR4Y7ShxjF6l8SlBN/+4YhBJpomG2dx8Ac43FM9OE5rdn1+h7NxsIcAQ==
   dependencies:
-    "@commitlint/cli" "^17.1.1"
+    "@commitlint/cli" "^17.1.2"
     "@commitlint/types" "^17.0.0"
 
 compare-func@^2.0.0:
