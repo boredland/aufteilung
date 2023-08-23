@@ -43,7 +43,7 @@
     "ts-jest": "29.1.1",
     "ts-node": "10.9.1",
     "tsup": "6.7.0",
-    "typescript": "4.8.4"
+    "typescript": "4.9.5"
   },
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts --clean --minify",
