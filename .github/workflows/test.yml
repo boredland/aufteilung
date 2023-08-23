@@ -17,7 +17,7 @@ jobs:
           token: ${{ github.token }}
           fetch-depth: 0
       - name: setup node
-        uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
+        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3
         with:
           node-version: 'node'
           cache: 'yarn'
