@@ -34,7 +34,7 @@
     "@commitlint/cli": "17.8.1",
     "@commitlint/config-conventional": "17.8.1",
     "@release-it/conventional-changelog": "5.1.1",
-    "@types/jest": "29.5.11",
+    "@types/jest": "29.5.12",
     "@types/node": "18.19.13",
     "commitlint": "17.8.1",
     "husky": "8.0.3",
