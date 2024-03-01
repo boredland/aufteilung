@@ -28,7 +28,7 @@
     "access": "public"
   },
   "dependencies": {
-    "heap-js": "2.3.0"
+    "heap-js": "2.5.0"
   },
   "devDependencies": {
     "@commitlint/cli": "17.8.1",
